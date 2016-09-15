@@ -15,8 +15,8 @@ mailPort = 465
 print ("creando el sooooocket")
 clientSocket = socket(AF_INET,SOCK_STREAM)
 print ("conectando el sooooocket")
-wrappedSocket = ssl.wrap_socket(clientSocket,
-                ssl_version=ssl.PROTOCOL_TLSv1,
+wrappedSocket = ssl.wrap_socket(clientSocket,      #Here we try to create a secure socket to that
+                ssl_version=ssl.PROTOCOL_TLSv1,     #the mail server makes a handshake and create the response
                 ciphers="HIGH:-aNULL:-eNULL:-PSK:RC4-SHA:RC4-MD5",
                 cert_reqs=ssl.CERT_REQUIRED)
 
